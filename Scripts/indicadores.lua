@@ -438,7 +438,7 @@ end
 -- ............................................... MAIN .................................
 -- width, height, decoration style as per XPLMCreateWindowEx. 1 for solid background, 3 for transparent
 wnd3 = float_wnd_create(600, 200, 3, false)
-float_wnd_set_position(wnd3, 50,SCREEN_HIGHT - 250)
+float_wnd_set_position(wnd3,50,50)
 float_wnd_set_title(wnd3, "")
 float_wnd_set_ondraw(wnd3, "on_draw3")
 float_wnd_set_onclick(wnd3, "on_click3")
