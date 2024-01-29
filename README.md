@@ -3,4 +3,4 @@
 colections of my scripts made for Xplane 11 and 12 plughin [flywithlua](https://github.com/X-Friese/FlyWithLua)
 
 Scrips:
- - [indicadores.lua](Scripts\indicadores.lua) , fancy hud with comon indicators for see them when fly in third person view
+ - [indicadores.lua](Scripts/indicadores.lua) , fancy hud with comon indicators for see them when fly in third person view
