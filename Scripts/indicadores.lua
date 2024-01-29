@@ -1,4 +1,6 @@
-
+-- Indicadores
+-- V2 by Javier
+-- build 29-01-2024
 
 if not SUPPORTS_FLOATING_WINDOWS then
     -- to make sure the script doesn't stop old FlyWithLua versions
@@ -9,9 +11,8 @@ end
 local gfx = require "graphics"
 
 -- numero de motores
-dataref("number_engines","sim/aircraft/overflow/acf_num_thrustpoints","readonly",0)
--- potencia seleccionada motores array
---local engine_thtr = dataref_table("sim/flightmodel/engine/ENGN_thro")
+dataref("number_engines","sim/aircraft/engine/acf_num_engines","readonly",0)
+
 -- potencia suministrada motores array
 local engine_use = dataref_table("sim/flightmodel/engine/ENGN_thro_use")
 local engine_expected = dataref_table("sim/flightmodel/engine/ENGN_thro")
@@ -31,18 +32,22 @@ dataref("real_compass", "sim/cockpit2/gauges/indicators/compass_heading_deg_mag"
 -- flaps
 dataref("req_flaps", "sim/flightmodel/controls/flaprqst", "readonly", 0) 
 dataref("flaps1_status", "sim/flightmodel/controls/flaprat", "readonly", 0) 
---dataref("flaps2_status", "sim/flightmodel/controls/flap2rat", "readonly", 0) 
+ 
 -- nav1
 dataref("nav1_freq", "sim/cockpit/radios/nav1_freq_hz", "readonly", 0) 
 -- nav2
 dataref("nav2_freq", "sim/cockpit/radios/nav2_freq_hz", "readonly", 0)
+
 -- nav1 status
 dataref("nav1_cdi", "sim/cockpit/radios/nav1_CDI", "readonly", 0) 
+
+-- ILS
 dataref("ils_lateral_deviation", "sim/cockpit2/radios/indicators/nav1_hdef_dots_pilot", "readonly", 0)
 dataref("ils_LOC", "sim/cockpit/radios/nav1_course_degm", "readonly", 0)
 
 -- nav2 status
 dataref("nav2_cdi", "sim/cockpit/radios/nav2_CDI", "readonly", 0)
+
 -- velocidad del viento
 dataref("wind_speed", "sim/cockpit2/gauges/indicators/wind_speed_kts", "readonly", 0)
 -- direccion del viento
@@ -50,8 +55,6 @@ dataref("wind_direction", "sim/cockpit2/gauges/indicators/wind_heading_deg_mag",
 dataref("wind_direction2", "sim/weather/wind_direction_degt[0]", "readonly", 0)
 -- combustible
 dataref("total_fuel", "sim/flightmodel/weight/m_fuel_total", "readonly", 0)
--- array fuel por deposito float
---local tanks_fuel = dataref_table("sim/flightmodel/weight/m_fuel")
 
 --	numero de tankes de fuel
 dataref("n_fuel_tanks","sim/aircraft/overflow/acf_num_tanks","readonly",0)
@@ -61,9 +64,8 @@ local tanks_fuel = dataref_table("sim/cockpit2/fuel/fuel_quantity")
 local gear_deployment = dataref_table("sim/aircraft/parts/acf_gear_deploy")
 local gear_leglen = dataref_table("sim/aircraft/parts/acf_gear_leglen")
 
---sim/cockpit/warnings/annunciators/speedbrake -- boolean
 dataref("speed_brakes", "sim/flightmodel2/controls/speedbrake_ratio", "readonly", 0)
---sim/flightmodel/controls/parkbrake -- float
+
 dataref("park_brake", "sim/flightmodel/controls/parkbrake", "readonly", 0)
 
 local v_speeds = dataref_table("sim/aircraft/view/acf_Vso")
@@ -73,12 +75,9 @@ dataref("true_roll", "sim/flightmodel/position/true_phi", "readonly", 0)
 
 dataref("true_pitch", "sim/flightmodel/position/true_theta", "readonly", 0)
 
-
 dataref("req_elev_trim", "sim/cockpit2/controls/elevator_trim", "readonly", 0)
 
 dataref("elev_trim", "sim/flightmodel2/controls/elevator_trim", "readonly", 0)
-
-
 
 
 --variables gloables
